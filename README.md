@@ -73,11 +73,6 @@ Things you may want to cover:
 
 | Column        | Type     | Options                        |
 | ------------- | -------- | ------------------------------ |
-| postlal_code  | varchar  | null: false                    |
-| city          | varchar  | null: false                    |
-| address       | string   | null: false                    |
-| blok_name     | string   | null: false                    |
-| phone_num     | varchar  | null: false                    |
 | user_id       | integer  | null: false, foreign_key: true |
 | item_id       | integer  | null: false, foreign_key: true |
 
@@ -85,6 +80,23 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_one :item
+- has_one :address
+
+
+## address テーブル
+
+| Column        | Type     | Options                        |
+| ------------- | -------- | ------------------------------ |
+| postlal_code  | varchar  | null: false                    |
+| prefecture_id | integer  | null: false                    |
+| city          | varchar  | null: false                    |
+| address       | string   | null: false                    |
+| blok_name     | string   | null: false                    |
+| phone_num     | varchar  | null: false                    |
+
+### Association
+
+- belongs_to :purchase_history
 - belongs_to_active_hash :prefecture
 
 
