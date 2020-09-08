@@ -50,12 +50,12 @@ Things you may want to cover:
 | item_name        | string  | null: false                    |
 | text             | text    | null: false                    |
 | price            | integer | null: false                    |
-| category_id      | int     | null: false                    |
-| status_id        | int     | null: false                    |
-| delivery_fee_id  | int     | null: false                    |
-| option_id        | int     | null: false                    |
-| shipping_days_id | int     | null: false                    |
-| user_id          | int     | null: false, foreign_key: true |
+| category_id      | integer | null: false                    |
+| status_id        | integer | null: false                    |
+| delivery_fee_id  | integer | null: false                    |
+| option_id        | integer | null: false                    |
+| shipping_days_id | integer | null: false                    |
+| user_id          | integer | null: false, foreign_key: true |
 
 
 ### Association
@@ -74,13 +74,12 @@ Things you may want to cover:
 | Column        | Type     | Options                        |
 | ------------- | -------- | ------------------------------ |
 | postlal_code  | varchar  | null: false                    |
-| prefecture_id | int      | null: false                    |
 | city          | varchar  | null: false                    |
 | address       | string   | null: false                    |
 | blok_name     | string   | null: false                    |
 | phone_num     | varchar  | null: false                    |
-| user_id       | int      | null: false, foreign_key: true |
-| item_id       | int      | null: false, foreign_key: true |
+| user_id       | integer  | null: false, foreign_key: true |
+| item_id       | integer  | null: false, foreign_key: true |
 
 ### Association
 
