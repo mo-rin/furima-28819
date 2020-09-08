@@ -27,49 +27,65 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------- | ----------- |
-| nickname       | string  | null: false |
-| email          | string  | null: false |
-| password       | integer | null: false |
-| name           | string  | null: false |
-| birthday       | integer | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| nickname        | string  | null: false |
+| email           | string  | null: false |
+| password        | integer | null: false |
+| last_name       | varchar | null: false |
+| first_name      | varchar | null: false |
+| last_name_kana  | varchar | null: false |
+| first_name_kana | varchar | null: false |
+| birthday        | date    | null: false |
 
 ### Association
 
-- has_many :exhibition_items
+- has_many :items
 - has_many :purchase_items
 
-## exhibition_items テーブル
+## items テーブル
 
-| Column    | Type    | Options                        |
-| --------- | ------- | ------------------------------ |
-| image     | blob    | null: false                    |
-| item_name | string  | null: false                    |
-| text      | text    | null: false                    |
-| price     | integer | null: false                    |
-| user_id   | int     | null: false, foreign_key: true |
+| Column           | Type    | Options                        |
+| ---------------- | ------- | ------------------------------ |
+| item_name        | string  | null: false                    |
+| text             | text    | null: false                    |
+| price            | integer | null: false                    |
+| category_id      | int     | null: false, foreign_key: true |
+| status_id        | int     | null: false, foreign_key: true |
+| delivery_fee_id  | int     | null: false, foreign_key: true |
+| option_id        | int     | null: false, foreign_key: true |
+| shipping_days_id | int     | null: false, foreign_key: true |
+| user_id          | int     | null: false, foreign_key: true |
 
-### Association
-
-- belongs_to :users
-- has_one :purchase_items
-
-
-## purchase_items テーブル
-
-| Column             | Type     | Options                        |
-| ------------------ | -------- | ------------------------------ |
-| item_name          | string   | null: false                    |
-| CardID             | integer  | null: false                    |
-| ExpireDate         | datetime | null: false                    |
-| cvv                | int      | null: false                    |
-| user_id            | int      | null: false, foreign_key: true |
-| exhibition_item_id | int      | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :exhibition_items
+- has_one :purchase_item
+- belongs_to_active_hash :category
+- belongs_to_active_hash :status
+- belongs_to_active_hash :delivery_fee
+- belongs_to_active_hash :option
+- belongs_to_active_hash :shipping_days
+
+
+## purchase_history テーブル
+
+| Column        | Type     | Options                        |
+| ------------- | -------- | ------------------------------ |
+| postlal_code  | varchar  | null: false                    |
+| prefecture_id | int      | null: false, foreign_key: true |
+| city          | varchar  | null: false                    |
+| address       | string   | null: false                    |
+| blok_name     | string   | null: false                    |
+| phone_num     | varchar  | null: false                    |
+| user_id       | int      | null: false, foreign_key: true |
+| item_id       | int      | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_one :item
+- belongs_to_active_hash :prefecture
 
 
