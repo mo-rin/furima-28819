@@ -32,10 +32,10 @@ Things you may want to cover:
 | nickname        | string  | null: false |
 | email           | string  | null: false |
 | password        | integer | null: false |
-| last_name       | varchar | null: false |
-| first_name      | varchar | null: false |
-| last_name_kana  | varchar | null: false |
-| first_name_kana | varchar | null: false |
+| last_name       | string  | null: false |
+| first_name      | string  | null: false |
+| last_name_kana  | string  | null: false |
+| first_name_kana | string  | null: false |
 | birthday        | date    | null: false |
 
 ### Association
@@ -50,11 +50,11 @@ Things you may want to cover:
 | item_name        | string  | null: false                    |
 | text             | text    | null: false                    |
 | price            | integer | null: false                    |
-| category_id      | int     | null: false, foreign_key: true |
-| status_id        | int     | null: false, foreign_key: true |
-| delivery_fee_id  | int     | null: false, foreign_key: true |
-| option_id        | int     | null: false, foreign_key: true |
-| shipping_days_id | int     | null: false, foreign_key: true |
+| category_id      | int     | null: false                    |
+| status_id        | int     | null: false                    |
+| delivery_fee_id  | int     | null: false                    |
+| option_id        | int     | null: false                    |
+| shipping_days_id | int     | null: false                    |
 | user_id          | int     | null: false, foreign_key: true |
 
 
@@ -74,7 +74,7 @@ Things you may want to cover:
 | Column        | Type     | Options                        |
 | ------------- | -------- | ------------------------------ |
 | postlal_code  | varchar  | null: false                    |
-| prefecture_id | int      | null: false, foreign_key: true |
+| prefecture_id | int      | null: false                    |
 | city          | varchar  | null: false                    |
 | address       | string   | null: false                    |
 | blok_name     | string   | null: false                    |
