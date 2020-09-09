@@ -79,7 +79,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :address
 
 
@@ -88,10 +88,10 @@ Things you may want to cover:
 | Column        | Type     | Options                        |
 | ------------- | -------- | ------------------------------ |
 | postlal_code  | varchar  | null: false                    |
-| prefecture_id | integer  | null: false                    |
-| city          | varchar  | null: false                    |
-| address       | string   | null: false                    |
-| blok_name     | string   | null: false                    |
+| prefecture_id | integer  |                                |
+| city          | varchar  |                                |
+| address       | string   |                                |
+| blok_name     | string   |                                |
 | phone_num     | varchar  | null: false                    |
 
 ### Association
