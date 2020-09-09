@@ -85,14 +85,14 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column                | Type     | Options                        |
-| --------------------- | -------- | ------------------------------ |
-| postlal_code          | varchar  | null: false                    |
-| prefecture_id         | integer  | null: false                    |
-| city                  | string   | null: false                    |
-| address               | string   | null: false                    |
-| blok_name             | string   |                                |
-| phone_num             | string   | null: false                    |
+| Column               | Type     | Options                        |
+| -------------------- | -------- | ------------------------------ |
+| postlal_code         | varchar  | null: false                    |
+| prefecture_id        | integer  | null: false                    |
+| city                 | string   | null: false                    |
+| address              | string   | null: false                    |
+| blok_name            | string   |                                |
+| phone_num            | string   | null: false                    |
 | purchase_history_id | integer  | null: false, foreign_key: true |
 
 ### Association
