@@ -41,7 +41,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :purchase_items
+- has_many :purchase_histories
 
 ## items テーブル
 
@@ -69,7 +69,7 @@ Things you may want to cover:
 - belongs_to_active_hash :shipping_days
 
 
-## purchase_history テーブル
+## purchase_histories テーブル
 
 | Column        | Type     | Options                        |
 | ------------- | -------- | ------------------------------ |
@@ -96,7 +96,7 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :purchase_history
+- belongs_to :purchase_histories
 - belongs_to_active_hash :prefecture
 
 
