@@ -61,7 +61,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :purchase_item
+- has_one :purchase_history
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
 - belongs_to_active_hash :delivery_fee
@@ -83,7 +83,7 @@ Things you may want to cover:
 - has_one :address
 
 
-## address テーブル
+## addresses テーブル
 
 | Column                | Type     | Options                        |
 | --------------------- | -------- | ------------------------------ |
@@ -93,11 +93,11 @@ Things you may want to cover:
 | address               | string   | null: false                    |
 | blok_name             | string   |                                |
 | phone_num             | string   | null: false                    |
-| purchase_histories_id | integer  | null: false, foreign_key: true |
+| purchase_history_id | integer  | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :purchase_histories
+- belongs_to :purchase_history
 - belongs_to_active_hash :prefecture
 
 
