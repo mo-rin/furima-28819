@@ -33,7 +33,7 @@
 | status_id        | integer | null: false                    |
 | delivery_fee_id  | integer | null: false                    |
 | option_id        | integer | null: false                    |
-| shipping_days_id | integer | null: false                    |
+| shipping_day_id | integer | null: false                    |
 | user_id          | integer | null: false, foreign_key: true |
 
 
@@ -45,7 +45,7 @@
 - belongs_to_active_hash :status
 - belongs_to_active_hash :delivery_fee
 - belongs_to_active_hash :option
-- belongs_to_active_hash :shipping_days
+- belongs_to_active_hash :shipping_day
 
 
 ## orders テーブル

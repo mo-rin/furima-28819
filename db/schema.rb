@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_09_15_144450) do
     t.integer "status_id"
     t.integer "delivery_fee_id"
     t.integer "option_id"
-    t.integer "shipping_days_id"
+    t.integer "shipping_day_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
