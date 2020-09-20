@@ -8,5 +8,10 @@ FactoryBot.define do
     option           {"鳥取県"}
     shipping_day     {"2〜3日で発送"}
     price            {"90000"}
+    association :user
+
+    after(:build) do |item|
+      item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+ 
   end
 end
