@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_day
 
   with_options presence: true do
-  validates :item_name, :text, :category, :status, :delivery_fee,
+  validates :image, :item_name, :text, :category, :status, :delivery_fee,
             :option, :shipping_day
   validates :price, numericality: { only_integer: true }, inclusion: {in: 300..9999999}
   end
