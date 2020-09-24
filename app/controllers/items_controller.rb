@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, only: [:edit, :update, :show]
-
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
 
   def index
     @items = Item.includes(:user)
@@ -20,6 +19,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      redirct_to edit_item_path
+    end
+  end
+
   def edit
   end
 
@@ -31,7 +38,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def show
   end
 
@@ -39,7 +45,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :image, :text, :price, :category_id, :status_id, :delivery_fee_id, :option_id,
-    :shipping_day_id ).merge(user_id: current_user.id)
+                                 :shipping_day_id).merge(user_id: current_user.id)
   end
 
   def set_item
