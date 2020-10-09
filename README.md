@@ -66,11 +66,11 @@
 
 | Column         | Type     | Options                        |
 | -------------- | -------- | ------------------------------ |
-| postlal_code   | varchar  | null: false                    |
+| postlal_code   | string  | null: false                    |
 | prefecture_id  | integer  | null: false                    |
 | city           | string   | null: false                    |
-| address        | string   | null: false                    |
-| blok_name      | string   |                                |
+| house_number   | string   | null: false                    |
+| building_name  | string   |                                |
 | phone_num      | string   | null: false                    |
 | order_id       | integer  | null: false, foreign_key: true |
 
