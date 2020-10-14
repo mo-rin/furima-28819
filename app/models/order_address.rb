@@ -3,7 +3,7 @@ class OrderAddress
   attr_accessor :token, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_num, :item_id, :user_id
 
   with_options presence: true do
-  validates :token, :postal_code, :prefecture_id, :city, :house_number, :phone_num
+    validates :token, :postal_code, :prefecture_id, :city, :house_number, :phone_num
   end
   validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
   validates :phone_num, format: { with: /\A\d{10}$|^\d{11}\z/ }
