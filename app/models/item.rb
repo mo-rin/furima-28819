@@ -13,11 +13,9 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :image, :item_name, :text, :category_id, :status_id, :delivery_fee_id,
               :option_id, :shipping_day_id
-    validates :price, numericality: { only_integer: true }, inclusion: {in: 300..9_999_999}
+    validates :price, numericality: { only_integer: true }, inclusion: { in: 300..9_999_999}
   end
-
 
   validates :category_id, :status_id, :delivery_fee_id, :option_id,
             :shipping_day_id, numericality: { other_than: 1 }
 end
-

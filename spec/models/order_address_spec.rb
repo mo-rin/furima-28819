@@ -17,23 +17,23 @@ RSpec.describe OrderAddress, type: :model do
     it 'postal_codeが空だと保存できないこと' do
       @order_address.postal_code = nil
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal code can't be blank", "Postal code is invalid")
+      expect(@order_address.errors.full_messages).to include("Postal code can't be blank", 'Postal code is invalid')
     end
     it 'postal_codeにハイフンを含んだ３桁と４桁でないと保存できないこと' do
-      @order_address.postal_code = "123456"
+      @order_address.postal_code = '123456'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal code is invalid")
+      expect(@order_address.errors.full_messages).to include('Postal code is invalid')
     end
     it 'prefecture_idがid: 0だと保存できないこと' do
-      @order_address.prefecture_id = "0"
+      @order_address.prefecture_id = '0'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Prefecture must be other than 0")
+      expect(@order_address.errors.full_messages).to include('Prefecture must be other than 0')
     end
     it 'cityが空だと保存できないこと' do
       @order_address.city = nil
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("City can't be blank")
-    end 
+    end
     it 'house_numberが空だと保存できないこと' do
       @order_address.house_number = nil
       @order_address.valid?
@@ -44,10 +44,9 @@ RSpec.describe OrderAddress, type: :model do
       expect(@order_address).to be_valid
     end
     it 'phone_numが10から11桁の数字でないと保存できないこと' do
-      @order_address.phone_num = "123456789"
+      @order_address.phone_num = '123456789'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone num is invalid")
+      expect(@order_address.errors.full_messages).to include('Phone num is invalid')
     end
-    
   end
 end
